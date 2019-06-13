@@ -44,7 +44,7 @@ body {
     background-position: 50% 30%;
     background-color: var(--pale);
     background-attachment: fixed;
-
+    overflow-x: hidden;
 }
 
 .container {
@@ -61,10 +61,18 @@ body {
 }
 
 .header h1 {
+    background-image: url(../images/texture.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    font-size: 50px;
+    margin-top: 250px;
+    padding: 100px 130px;
     z-index: 3;
     position: absolute;
+    left: 10%;
     line-height: 1;
-    padding-top: 24%;
+    filter: saturate(0.6);
+    transform: rotate(-5deg)
 }
 
 .header img {
@@ -87,24 +95,6 @@ body {
     z-index: 2;
 }
 
-/*
-.header img:nth-of-type(2) {
-    top: 5%;
-    left: -20%;
-    transform: rotate(-15deg);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
-    width: 200px;
-}
-*/
-
-/*
-.header img:nth-of-type(3) {
-    top: 5%;
-    right: -20%;
-    width: 230px;
-    transform: rotate(-347deg);
-}
-*/
 
 .header img:nth-of-type(2) {
     top: 65%;
@@ -160,26 +150,31 @@ body {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
 }
 
-.header img:nth-of-type(9) {
-    top: 80%;
-    right: -30%;
-    width: 350px;
+.offset-by-four p {
+    position: absolute;
+    margin-top: -220px;
+    right: -32%;
+    transform: rotate(-18deg);
+    width: 270px;
+    font-family: 'Homemade Apple', cursive;
+    z-index: 2;
+
 }
 
-.header img:nth-of-type(10) {
+.header img:nth-of-type(9) {
     top: -10%;
     right: 30%;
     width: 470px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
     filter: brightness(1.1);
     filter: sepia(.2);
-
 }
 
 .margin-top > img {
+    position: absolute;
     width: 160px;
     z-index: 2;
-    margin-top: -200px;
+    margin-top: 200px;
     margin-left: 40px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
     filter: grayscale(1) sepia(0.4)
@@ -431,196 +426,6 @@ h6 {
 p {
     margin-top: 0;
     color: var(--brown);
-}
-
-
-/* Links
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-a {
-    color: #1EAEDB;
-}
-
-a:hover {
-    color: #0FA0CE;
-}
-
-
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.button,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
-    display: inline-block;
-    height: 38px;
-    padding: 0 30px;
-    color: #555;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    background-color: transparent;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-.button:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="reset"]:focus,
-input[type="button"]:focus {
-    color: #333;
-    border-color: #888;
-    outline: 0;
-}
-
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
-    color: #FFF;
-    background-color: #33C3F0;
-    border-color: #33C3F0;
-}
-
-.button.button-primary:hover,
-button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
-    color: #FFF;
-    background-color: #1EAEDB;
-    border-color: #1EAEDB;
-}
-
-
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea,
-select {
-    height: 38px;
-    padding: 6px 10px;
-    /* The 6px vertically centers text on FF, ignored by Webkit */
-    background-color: #fff;
-    border: 1px solid #D1D1D1;
-    border-radius: 4px;
-    box-shadow: none;
-    box-sizing: border-box;
-}
-
-/* Removes awkward default styles on some inputs for iOS */
-
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
-textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-textarea {
-    min-height: 65px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-}
-
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-textarea:focus,
-select:focus {
-    border: 1px solid #33C3F0;
-    outline: 0;
-}
-
-label,
-legend {
-    display: block;
-    margin-bottom: .5rem;
-    font-weight: 600;
-}
-
-fieldset {
-    padding: 0;
-    border-width: 0;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    display: inline;
-}
-
-label > .label-body {
-    display: inline-block;
-    margin-left: .5rem;
-    font-weight: normal;
-}
-
-
-/* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-ul {
-    list-style: circle inside;
-}
-
-ol {
-    list-style: decimal inside;
-}
-
-ol,
-ul {
-    padding-left: 0;
-    margin-top: 0;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-    margin: 1.5rem 0 1.5rem 3rem;
-    font-size: 90%;
-}
-
-li {
-    margin-bottom: 1rem;
 }
 
 
@@ -991,10 +796,19 @@ img {
     filter: sepia(0.3)
 }
 
+.vier {
+    margin-top: -20%;
+    right: -43%;
+    width: 500px;
+    filter: saturate(0.6);
+    z-index: 1;
+}
 
 .margin-top {
     margin-top: 10em;
 }
+
+
 
 
 /* Misc
@@ -1020,34 +834,3 @@ hr {
     display: table;
     clear: both;
 }
-
-
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
-
-/* Larger than mobile */
-
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) */
-
-@media (min-width: 550px) {}
-
-/* Larger than tablet */
-
-@media (min-width: 750px) {}
-
-/* Larger than desktop */
-
-@media (min-width: 1000px) {}
-
-/* Larger than Desktop HD */
-
-@media (min-width: 1200px) {}
