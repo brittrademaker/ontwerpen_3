@@ -45,6 +45,7 @@ body {
     background-color: var(--pale);
     background-attachment: fixed;
     overflow-x: hidden;
+
 }
 
 .container {
@@ -61,31 +62,23 @@ body {
 }
 
 .header h1 {
-    background-image: url(../images/texture.png);
+    background-image: url(../images/letter_front_2.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    font-size: 50px;
-    margin-top: 250px;
-    padding: 100px 130px;
-    z-index: 3;
+    font-size: 300%;
+    text-align: left;
+    margin-top: 170px;
+    padding: 80px 150px 80px 50px;
+    z-index: 1;
     position: absolute;
     left: 10%;
     line-height: 1;
-    filter: saturate(0.6);
-    transform: rotate(-5deg)
+    filter: saturate(0.6) sepia(0.1);
+    animation: move_from_top 1s forwards;
 }
 
 .header img {
     position: absolute;
-}
-
-@keyframes up_down {
-    from {
-        margin-top: 3px;
-    }
-    to {
-        margin-top: 0px;
-    }
 }
 
 .header img:first-of-type {
@@ -93,36 +86,43 @@ body {
     left: -35%;
     width: 320px;
     z-index: 2;
+    animation: move_from_left 1s forwards;
 }
 
 
 .header img:nth-of-type(2) {
-    top: 65%;
+    top: 55%;
     left: -32%;
     width: 380px;
     z-index: 2;
+    animation: move_from_left 1s forwards;
+
 }
 
 .header img:nth-of-type(3) {
-    top: 37%;
-    right: -22%;
-    width: 150px;
-    opacity: 0.8;
-    transform: rotate(-347deg);
+    top: 22%;
+    right: -38%;
+    width: 430px;
+    transform: rotate(-120deg);
+    filter: brightness(1.2) contrast(0.8);
+    animation: move_from_right 1s forwards;
+
 }
 
 .header img:nth-of-type(4) {
-    top: 75%;
+    top: 65%;
     right: -50%;
     width: 850px;
+    animation: move_from_right 1s forwards;
 }
 
 .header img:nth-of-type(5) {
-    top: 95%;
+    top: 85%;
     left: -5%;
     width: 350px;
     transform: rotate(8deg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    animation: move_from_left 1s forwards;
 }
 
 .header img:nth-of-type(6) {
@@ -131,6 +131,7 @@ body {
     width: 180px;
     transform: rotate(-15deg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    animation: move_from_left 1s forwards;
 }
 
 .header img:nth-of-type(7) {
@@ -140,25 +141,38 @@ body {
     transform: rotate(-354deg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
     z-index: 2;
+    animation: move_from_top 1s forwards;
 }
 
 .header img:nth-of-type(8) {
-    top: 95%;
+    top: 90%;
     right: 0%;
-    width: 300px;
+    width: 400px;
     transform: rotate(-15deg);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    animation: move_from_right 1s forwards;
+}
+
+.header img:nth-of-type(10) {
+    top: 51%;
+    right: -10%;
+    width: 350px;
+    transform: rotate(-5deg);
+    filter: sepia(1) brightness(1.2);
+    opacity: 0.0;
+    z-index: -1;
+    animation: move_from_left 1s forwards;
 }
 
 .offset-by-four p {
-    position: absolute;
-    margin-top: -220px;
-    right: -32%;
+    position: relative;
+    top: -170px;
+    right: -50%;
     transform: rotate(-18deg);
     width: 270px;
     font-family: 'Homemade Apple', cursive;
+    line-height: 1.7;
     z-index: 2;
-
 }
 
 .header img:nth-of-type(9) {
@@ -168,16 +182,56 @@ body {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
     filter: brightness(1.1);
     filter: sepia(.2);
+    animation: move_from_top 1s forwards;
+
 }
 
-.margin-top > img {
+.margin-top > img:first-of-type {
     position: absolute;
     width: 160px;
     z-index: 2;
-    margin-top: 200px;
+    margin-top: 100px;
     margin-left: 40px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
-    filter: grayscale(1) sepia(0.4)
+    filter: grayscale(1) sepia(0.4);
+    animation: move_from_bottom 1s forwards;
+
+}
+
+.margin-top img:nth-of-type(2) {
+    position: absolute;
+    width: 250px;
+    top: -3em;
+    left: 100%;
+    z-index: 3;
+    transform: rotate(15deg);
+    filter: saturate(0.6) brightness(1.2);
+    opacity: 0.9;
+    animation: move_from_bottom 1s forwards;
+
+}
+
+.margin-top img:nth-of-type(3) {
+    position: absolute;
+    width: 400px;
+    top: -11em;
+    right: 56%;
+    transform: rotate(-2deg);
+    filter: saturate(0.6);
+    animation: move_from_bottom 1s forwards;
+
+}
+
+.margin-top img:nth-of-type(4) {
+    position: absolute;
+    width: 250px;
+    left: 76%;
+    z-index: 1;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.50);
+    transform: rotate15deg);
+    filter: saturate(0.5);
+    animation: move_from_bottom 1s forwards;
+
 }
 
 .column,
@@ -340,7 +394,7 @@ body {
     /* currently ems cause chrome bug misinterpreting rems on body element */
     line-height: 1.6;
     font-weight: 400;
-    font-family: "Rozha One", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Jim Nightshade', cursive;
     color: #222;
 }
 
@@ -398,6 +452,16 @@ h6 {
     font-size: 1.5rem;
     line-height: 1.6;
     letter-spacing: 0;
+}
+
+p {
+    font-family: 'Homemade Apple', cursive;
+    line-height: 1.7;
+
+}
+
+a {
+    text-decoration: none;
 }
 
 /* Larger than phablet */
@@ -519,8 +583,6 @@ form {
     float: left;
 }
 
-
-
 /**
  * Material Modal CSS
  */
@@ -614,9 +676,8 @@ form {
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.modal__trigger img:hover {
-    animation: up_down;
-    animation-duration: 0.3s;
+.modal__trigger:hover {
+    margin-top: 4px;
     cursor: url('../images/magnifier.png'), auto;
 }
 
@@ -640,22 +701,6 @@ form {
     transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
-/**
- * Demo specific CSS
- */
-
-/*
-body {
-    height: 100vh;
-    background: #f44336;
-}*/
-
-/*
-img {
-    max-width: 100%;
-}
-*/
 
 .demo-btns header {
     padding: 7vh 10vw;
@@ -764,8 +809,9 @@ img {
 .een {
     top: 5%;
     left: -20%;
-
     width: 200px;
+    animation: move_from_left 1s forwards;
+
 }
 
 .een img {
@@ -777,6 +823,8 @@ img {
     top: 5%;
     right: -20%;
     width: 230px;
+    animation: move_from_right 1s forwards;
+
 }
 
 .twee img {
@@ -788,6 +836,7 @@ img {
     top: 27%;
     left: -15%;
     width: 250px;
+    animation: move_from_left 1s forwards;
 }
 
 .drie img {
@@ -797,18 +846,43 @@ img {
 }
 
 .vier {
-    margin-top: -20%;
-    right: -43%;
+    top: -260px;
+    right: -25%;
     width: 500px;
     filter: saturate(0.6);
     z-index: 1;
+    position: absolute;
+    animation: move_from_right 1s forwards;
+
+}
+
+.vijf {
+    position: absolute;
+    width: 500px;
+    top: -5em;
+    left: 28%;
+    z-index: 1;
+    filter: saturate(0.6);
+    animation: move_from_bottom 1s forwards;
+
+}
+
+.vijf p {
+    font-size: 8px;
+    z-index: 2;
+    position: absolute;
+    width: 32%;
+    transform: rotate(3deg);
+    top: -1em;
+    line-height: 2;
+    left: 63%;
+    animation: move_from_bottom 1s forwards;
+
 }
 
 .margin-top {
-    margin-top: 10em;
+    margin-top: 20em;
 }
-
-
 
 
 /* Misc
@@ -833,4 +907,52 @@ hr {
     content: "";
     display: table;
     clear: both;
+}
+
+/* Keyframes
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@keyframes move_from_top {
+    from {
+        margin-top: -20em;
+    }
+}
+
+@keyframes move_from_bottom {
+    from {
+        margin-top: 20em;
+    }
+}
+
+@keyframes move_from_left {
+    from {
+        margin-left: -20em;
+    }
+}
+
+@keyframes move_from_right {
+    from {
+        margin-right: -20em;
+    }
+}
+
+/* Delighters
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* when the library loads, each [data-delighter] 
+      gets the .delighter class */
+
+.foo.delighter {
+    transition: all .3s ease-out;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+/* the .started class is set when the top
+      of [data-delighter] is at 0.75 of the viewport 
+      (where 0 is top and 1 is bottom) */
+
+.foo.delighter.started {
+    transform: none;
+    opacity: 1;
 }
