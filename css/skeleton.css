@@ -81,9 +81,9 @@ body {
 }
 
 .header img:first-of-type {
-    top: 30%;
-    left: -35%;
-    width: 320px;
+    top: 26%;
+    left: -25%;
+    width: 300px;
     z-index: 2;
     animation: move_from_left 1s forwards;
 }
@@ -105,6 +105,7 @@ body {
     transform: rotate(-120deg);
     filter: brightness(1.2) contrast(0.8);
     animation: move_from_right 1s forwards;
+    pointer-events: none;
 
 }
 
@@ -168,7 +169,7 @@ body {
 .offset-by-four p {
     position: relative;
     top: -80px;
-    right: -47%;
+    right: -40%;
     transform: rotate(-18deg);
     width: 270px;
     font-family: 'Special Elite', cursive;
@@ -858,7 +859,7 @@ form {
 
 .vier {
     top: -160px;
-    right: -25%;
+    right: -20%;
     width: 500px;
     filter: saturate(0.6);
     z-index: 1;
@@ -903,7 +904,7 @@ form {
     position: absolute;
     width: 420px;
     top: 15em;
-    left: -15%;
+    left: -14%;
     z-index: 1;
     filter: saturate(0.6);
     animation: move_from_left 1s forwards;
@@ -917,7 +918,7 @@ form {
     color: #dcdcdc;
     top: 27em;
     line-height: 2;
-    left: -6%;
+    left: -2%;
     animation: move_from_left 1s forwards;
     font-family: 'Special Elite', cursive;
 }
@@ -926,7 +927,7 @@ form {
     position: absolute;
     width: 320px;
     top: 15em;
-    right: -20%;
+    right: -15%;
     z-index: -1;
     filter: saturate(0.6);
     animation: move_from_right 1s forwards;
