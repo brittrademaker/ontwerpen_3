@@ -255,9 +255,9 @@ body {
     animation: move_from_bottom 1s forwards;
 }
 
-.link_back img {
+.link_back > img {
     position: absolute;
-    width: 350px;
+    width: 350px !important;
     top: 40em;
     margin-bottom: 40px;
     left: 8%;
